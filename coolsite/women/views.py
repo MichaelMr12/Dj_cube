@@ -4,12 +4,17 @@ from django.urls import reverse
 
 menu = [{'title': 'Главная', 'url_n': 'home'},
         {'title': 'Лицей', 'url_n': 'car'},
+        {'title': 'О программе', 'url_n': 'about'},
         ]
 
 
 # Create your views here.
 def index(request):
     return render(request, 'women/index.html', {'menu': menu})
+
+
+def about(request):
+    return render(request, 'women/about.html', {'menu': menu})
 
 
 def categories(request, cat_id):
@@ -20,4 +25,4 @@ def categories(request, cat_id):
 
 
 def licei(request):
-    return HttpResponse('<img src= "https://a.d-cd.net/784c77as-1920.jpg"><h1>Это будущая страница лицея</h1></img>')
+    return render(request, 'women/liceum.html', {'menu': menu})

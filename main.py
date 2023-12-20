@@ -1,16 +1,11 @@
-# This is a sample Python script.
+import sys
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# считывание списка из входного потока
+lst_in = ['Муму','Евгений Онегин', 'Сияние', 'Мастер и Маргарита', 'Пиковая дама', 'Колобок']
+i = 0 
+# здесь продолжайте программу (используйте список lst_in)
+while i<len(lst_in):
+    if ' ' in lst_in[i]:
+        del lst_in[i]
+    i+=1
+print(*lst_in)

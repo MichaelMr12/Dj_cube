@@ -20,3 +20,11 @@ def main():
 
 if __name__ == '__main__':
     main()
+"""
+python manage.py makemigrations
+python manage.py sqlmigrate women 0001
+python manage.py migrate
+
+python manage.py shell_plus
+
+"""

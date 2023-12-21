@@ -1,6 +1,8 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
+
+from women.models import Women
 
 menu = [{'title': 'Главная', 'url_n': 'home'},
         {'title': 'Лицей', 'url_n': 'car'},
@@ -12,6 +14,10 @@ menu = [{'title': 'Главная', 'url_n': 'home'},
 def index(request):
     return render(request, 'women/index.html', {'menu': menu})
 
+
+def women_g(request, w_id):
+    post = get_object_or_404(Women, pk=w_id)
+    return render(request, 'women/women_g.html',  {'menu': menu, 'post':post})
 
 def about(request):
     return render(request, 'women/about.html', {'menu': menu})

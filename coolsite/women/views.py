@@ -7,6 +7,7 @@ from women.models import Women
 menu = [{'title': 'Главная', 'url_n': 'home'},
         {'title': 'Лицей', 'url_n': 'car'},
         {'title': 'О программе', 'url_n': 'about'},
+        {'title': 'Знаменитые женщины', 'url_n': 'womens'},
         ]
 
 
@@ -14,10 +15,15 @@ menu = [{'title': 'Главная', 'url_n': 'home'},
 def index(request):
     return render(request, 'women/index.html', {'menu': menu})
 
-
+def womens(request):
+    wom = Women.objects.all()
+    data = {'menu': menu,
+            'wom':wom}
+    return render(request, 'women/womens.html', data)
 def women_g(request, w_id):
     post = get_object_or_404(Women, pk=w_id)
-    return render(request, 'women/women_g.html',  {'menu': menu, 'post':post})
+    return render(request, 'women/women_g.html', {'menu': menu, 'post': post})
+
 
 def about(request):
     return render(request, 'women/about.html', {'menu': menu})

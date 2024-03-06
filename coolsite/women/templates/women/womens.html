@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Знаменитые женщины </h1>
+<ul>
+    {% for w in wom %}
+    <li> <p> {{w.id}} </p>
+    <a href="{% url 'women_g' w.id %}"> {{w.title}}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
